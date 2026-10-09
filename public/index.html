@@ -170,7 +170,7 @@ main section:last-child { border-bottom: 0; }
 .chapas-empty .status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
 .chapas-empty .status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 3px var(--mark); }
 .chapas-empty ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
-.chapas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.chapas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
 .chapa { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 14px; align-content: start; }
 .chapa .num { font-family: var(--display); font-size: 2.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
 .chapa dl { margin: 0; display: grid; gap: 6px; font-size: .93rem; }
@@ -178,6 +178,10 @@ main section:last-child { border-bottom: 0; }
 .chapa dd { margin: 0; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dotted var(--line); padding-bottom: 4px; }
 .chapa dd span:first-child { color: var(--muted); }
 .chapa dd span:last-child { text-align: right; }
+.chapa .sit { justify-self: start; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; }
+.chapa .sit.ok { background: var(--accent); color: var(--surface); }
+.chapa .sit.pend-sit { background: var(--mark); color: var(--mark-ink); }
+.chapa p.tl-docs { display: flex; flex-wrap: wrap; gap: 6px 16px; margin: 0; font-size: .9rem; font-weight: 600; }
 
 /* Documentos */
 .docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
@@ -281,7 +285,7 @@ footer p { opacity: .85; max-width: 60ch; }
         </li>
         <li data-date="2026-09-21">
           <div class="when-t">21/09/2026</div><div class="rail"><span class="dot"></span></div>
-          <div class="body"><h3>Prorrogação do prazo das chapas</h3><p>Edital da Comissão Eleitoral amplia o prazo de registro, que era 20/09/2026, para 30/09/2026, para assegurar ampla publicidade e participação dos associados.</p><p class="tl-docs"><a href="docs/Edital-Convocacao-Eleicoes-2026-09-21.pdf" target="_blank" rel="noopener">Edital de 21/09/2026 (PDF)</a></p></div>
+          <div class="body"><h3>Prorrogação do prazo das chapas</h3><p>O Conselho Deliberativo aprova a ampliação do prazo de registro, que era 20/09/2026, para 30/09/2026, e a Comissão Eleitoral publica o novo Edital, para assegurar ampla publicidade e participação dos associados.</p><p class="tl-docs"><a href="docs/Ato-Conselho-Deliberativo-Prorrogacao-2026-09-21.pdf" target="_blank" rel="noopener">Ato do Conselho Deliberativo (PDF)</a><a href="docs/Edital-Convocacao-Eleicoes-2026-09-21.pdf" target="_blank" rel="noopener">Edital de 21/09/2026 (PDF)</a></p></div>
         </li>
         <li data-date="2026-09-23">
           <div class="when-t">23/09/2026</div><div class="rail"><span class="dot"></span></div>
@@ -295,17 +299,21 @@ footer p { opacity: .85; max-width: 60ch; }
           <div class="when-t">01/10/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Declaração de integrante de chapa</h3><p>Leydervan de Jesus Amorim Mousinho declara ciência e concordância com a sua participação na chapa encabeçada por Kleiton Silva dos Santos.</p><p class="tl-docs"><a href="docs/Declaracao-Leydervan-Mousinho-2026-10-01.pdf" target="_blank" rel="noopener">Declaração (PDF)</a></p></div>
         </li>
+        <li data-date="2026-10-02">
+          <div class="when-t">02/10/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Homologação e indeferimento</h3><p>A Comissão Eleitoral homologa a Chapa 01, "O Trabalho Não Pode Parar", encabeçada por Kleiton Silva dos Santos. O pedido de registro da chapa encabeçada por Adriano da Silva Reis é indeferido neste momento, com prazo único de 2 dias úteis para regularizar as exigências passíveis de saneamento. As decisões foram entregues às chapas em 05/10/2026.</p><p class="tl-docs"><a href="docs/Homologacao-Chapa-01-2026-10-02.pdf" target="_blank" rel="noopener">Ato de homologação (PDF)</a><a href="docs/Termo-Indeferimento-Chapa-Adriano-2026-10-02.pdf" target="_blank" rel="noopener">Termo de indeferimento (PDF)</a></p></div>
+        </li>
         <li data-date="2026-10-06">
           <div class="when-t">06/10/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Desistência de candidatura</h3><p>Gilmario Coutinho de Amorim declara a desistência da sua candidatura na chapa encabeçada por Adriano da Silva Reis.</p><p class="tl-docs"><a href="docs/Desistencia-Gilmario-Amorim-2026-10-06.pdf" target="_blank" rel="noopener">Declaração de desistência (PDF)</a></p></div>
         </li>
         <li data-date="" data-phase="analise">
           <div class="when-t"><span class="pend">A definir</span></div><div class="rail"><span class="dot"></span></div>
-          <div class="body"><h3>Análise e homologação das chapas</h3><p>A Comissão Eleitoral analisa os pedidos de registro e informa o resultado às chapas em até 2 dias úteis. As chapas homologadas recebem um número, pela ordem de registro.</p></div>
+          <div class="body"><h3>Reanálise do pedido de registro</h3><p>Encerrado o prazo de regularização, a Comissão Eleitoral reanalisa a documentação da chapa encabeçada por Adriano da Silva Reis e decide sobre o registro.</p></div>
         </li>
         <li data-date="" data-phase="campanha">
           <div class="when-t"><span class="pend">A definir</span></div><div class="rail"><span class="dot"></span></div>
-          <div class="body"><h3>Campanha eleitoral</h3><p>Começa após a homologação. Cada chapa tem espaço e condições iguais nos meios de comunicação do clube, e todo material de campanha passa antes pela aprovação da Comissão.</p></div>
+          <div class="body"><h3>Campanha eleitoral</h3><p>Começa após a definição das chapas. Cada chapa tem espaço e condições iguais nos meios de comunicação do clube, e todo material de campanha passa antes pela aprovação da Comissão.</p></div>
         </li>
         <li data-date="" data-phase="votacao">
           <div class="when-t">2ª quinzena<br>de nov/2026</div><div class="rail"><span class="dot"></span></div>
@@ -394,7 +402,7 @@ footer p { opacity: .85; max-width: 60ch; }
       <div class="sec-head">
         <span class="eyebrow">Chapas e candidatos</span>
         <h2>Chapas inscritas</h2>
-        <p>As chapas aparecem pela ordem de registro, com o mesmo espaço e o mesmo formato para todas.</p>
+        <p>As chapas aparecem pela ordem de registro, com o mesmo espaço e o mesmo formato para todas, conforme as decisões da Comissão Eleitoral.</p>
       </div>
       <div id="chapas-out"></div>
     </div>
@@ -414,6 +422,9 @@ footer p { opacity: .85; max-width: 60ch; }
         <a class="doc" href="docs/Estatuto-Social-AABB-Balsas-2017.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Estatuto Social da AABB Balsas</b><small>Versão de 2017</small></span></a>
         <a class="doc" href="docs/Nomeacao-Comissao-Eleitoral-2026-09-03.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Nomeação da Comissão Eleitoral</b><small>Presidente do Conselho Deliberativo · 03/09/2026</small></span></a>
         <a class="doc" href="docs/Manifestacao-Cristiano-da-Silva-2026-09-23.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Manifestação de ciência e concordância</b><small>Cristiano da Silva, Conselho Deliberativo · 23/09/2026</small></span></a>
+        <a class="doc" href="docs/Ato-Conselho-Deliberativo-Prorrogacao-2026-09-21.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Ato de deliberação e autorização (prorrogação do prazo)</b><small>Conselho Deliberativo · 21/09/2026</small></span></a>
+        <a class="doc" href="docs/Homologacao-Chapa-01-2026-10-02.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Ato de homologação de chapa inscrita</b><small>Comissão Eleitoral · 02/10/2026</small></span></a>
+        <a class="doc" href="docs/Termo-Indeferimento-Chapa-Adriano-2026-10-02.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de indeferimento do pedido de registro</b><small>Comissão Eleitoral · 02/10/2026</small></span></a>
       </div>
 
       <h3 style="margin-top:36px">Documentos das chapas</h3>
@@ -514,7 +525,45 @@ footer p { opacity: .85; max-width: 60ch; }
                { titulo: "Conselho Fiscal", membros: [...] } ] }                     */
 const DATA_ELEICAO = null;
 const FORMATO = null;
-const CHAPAS = [];
+const CHAPAS = [
+  { numero: "01", nome: "O Trabalho Não Pode Parar", doc: "docs/Homologacao-Chapa-01-2026-10-02.pdf",
+    situacao: "Homologada em 02/10/2026",
+    grupos: [
+      { titulo: "Conselho de Administração", membros: [
+        ["Presidente", "Kleiton Silva dos Santos"],
+        ["Vice-Presidente Administrativo", "Marcos Xavier da Silva"],
+        ["Vice-Presidente Financeiro", "Francisco Dalso de Almeida"],
+        ["Vice-Presidente Social", "Zilma de Sousa Rocha Ramalho"],
+        ["Vice-Presidente de Esportes", "Mauro Edson do Nascimento"],
+        ["Vice-Presidente Patrimonial", "Kleber Dutra Gomes"],
+        ["Vice-Presidente Institucional", "Amilton Ribeiro de Moura"],
+        ["Vice-Presidente de Tecnologia e Inovação", "Henrique de Sousa Paulo"] ] },
+      { titulo: "Suplentes de Vice-Presidente", membros: [
+        ["1º", "Doralice da Silva Pereira"], ["2º", "Jean Gleiton Moraes de Abreu"],
+        ["3º", "Edilza Maria Evaristo da Silva"], ["4º", "Florisvaldo Ribeiro Costa"] ] },
+      { titulo: "Conselho Deliberativo · efetivos", membros: [
+        ["1", "Lucilene Pereira"], ["2", "Jonatan Ribeiro Botelho"], ["3", "Manoel da Silva Oliveira Filho"],
+        ["4", "Cristiano da Silva"], ["5", "Vamario Alves"], ["6", "Alesio Sousa Botelho"],
+        ["7", "Adalberto Martins Moura"], ["8", "Delson Lopes da Cunha"], ["9", "João Antônio Moraes"],
+        ["10", "Regina Lúcia de Almeida Silva"], ["11", "Francisca da Silva Abreu"], ["12", "Antonio Rodrigues de Assis"],
+        ["13", "Manoel Rito Sousa"], ["14", "Carlos Magno Martins de Miranda"], ["15", "Marília Gabriela Martins Nunes"] ] },
+      { titulo: "Conselho Deliberativo · suplentes", membros: [
+        ["1", "Clayton Rodrigues Martins"], ["2", "Leydervan de Jesus Amorim Mousinho"], ["3", "Flávio Damasceno Santos Nogueira"],
+        ["4", "Luiz Henrique Sampaio Angelim"], ["5", "Leonel Silva Sousa"] ] },
+      { titulo: "Conselho Fiscal · efetivos", membros: [
+        ["1", "Maurílio Gonçalves Moura"], ["2", "Murilo Silva dos Santos Souza"] ] },
+      { titulo: "Conselho Fiscal · suplentes", membros: [
+        ["1", "Aparecida Mara de Oliveira"], ["2", "Johnny Herberthy Martins Ferreira"] ] }
+    ] }
+];
+/* Pedidos de registro ainda sem decisão final, mostrados no mesmo formato das chapas. */
+const PEDIDOS_PENDENTES = [
+  { nome: "Chapa encabeçada por Adriano da Silva Reis", doc: "docs/Termo-Indeferimento-Chapa-Adriano-2026-10-02.pdf",
+    situacao: "Pedido de registro indeferido neste momento, em 02/10/2026",
+    texto: "A Comissão Eleitoral concedeu prazo único de 2 dias úteis para regularizar as exigências passíveis de saneamento. A decisão final será publicada aqui após a reanálise." }
+];
+/* Etapa atual da linha do tempo (data-phase); vazio para calcular automaticamente. */
+const ETAPA_ATUAL = "analise";
 const ATUALIZADO = "09/10/2026";
 
 document.getElementById("upd").textContent = ATUALIZADO;
@@ -565,7 +614,8 @@ if (eleicao) {
     const d = li.dataset.date ? new Date(li.dataset.date + "T23:59") : null;
     if (d && d < hoje) li.classList.add("done");
   });
-  if (CHAPAS.length === 0) atual = items.find(li => li.dataset.phase === "analise");
+  if (ETAPA_ATUAL) atual = items.find(li => li.dataset.phase === ETAPA_ATUAL);
+  else if (CHAPAS.length === 0) atual = items.find(li => li.dataset.phase === "analise");
   else if (!eleicao || eleicao > hoje) atual = items.find(li => li.dataset.phase === "campanha");
   else atual = items.find(li => li.dataset.phase === "votacao");
   if (atual) {
@@ -590,12 +640,22 @@ if (eleicao) {
     return;
   }
   const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const doc = c => c.doc ? `<p class="tl-docs"><a href="${esc(c.doc)}" target="_blank" rel="noopener">Documento da Comissão (PDF)</a></p>` : "";
   out.innerHTML = '<div class="chapas-grid">' + CHAPAS.map(c => `
     <article class="chapa">
       <div><span class="eyebrow">Chapa</span><div class="num">${esc(c.numero)}</div></div>
       <h3>${esc(c.nome)}</h3>
+      ${c.situacao ? `<span class="sit ok">${esc(c.situacao)}</span>` : ""}
+      ${doc(c)}
       <dl>${c.grupos.map(g => `<dt>${esc(g.titulo)}</dt>` +
         g.membros.map(([cargo, nome]) => `<dd><span>${esc(cargo)}</span><span>${esc(nome)}</span></dd>`).join("")).join("")}</dl>
+    </article>`).join("") + PEDIDOS_PENDENTES.map(c => `
+    <article class="chapa">
+      <div><span class="eyebrow">Pedido de registro</span></div>
+      <h3>${esc(c.nome)}</h3>
+      <span class="sit pend-sit">${esc(c.situacao)}</span>
+      <p style="color:var(--muted);font-size:.93rem">${esc(c.texto)}</p>
+      ${doc(c)}
     </article>`).join("") + "</div>";
 })();
 </script>
