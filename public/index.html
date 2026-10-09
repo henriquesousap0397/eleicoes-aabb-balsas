@@ -96,6 +96,8 @@ header.band { background: var(--band); color: var(--band-ink); }
 .count { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
 .count div { background: var(--yellow); color: #22205A; border-radius: 10px; padding: 8px 12px; min-width: 70px; text-align: center; }
 .count b { display: block; font-family: var(--display); font-size: 1.8rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.count .cd-lbl { background: transparent; color: inherit; min-width: 0; text-align: left; display: flex; align-items: center; }
+.count .cd-lbl small { text-transform: none; letter-spacing: 0; font-weight: 600; opacity: .9; }
 .count small { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
 .cal { font-variant-numeric: tabular-nums; }
 .cal-title { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; display: flex; justify-content: space-between; }
@@ -134,6 +136,13 @@ main section:last-child { border-bottom: 0; }
 .timeline li.now .dot { background: var(--yellow); border-color: var(--band); width: 18px; height: 18px; margin-top: 4px; box-shadow: 0 0 0 4px var(--mark); }
 .timeline .body { padding-bottom: 26px; }
 .timeline .body p { color: var(--muted); font-size: .95rem; margin-top: 2px; }
+.sched-wrap { overflow-x: auto; margin-top: 16px; max-width: 560px; }
+.sched { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: .95rem; }
+.sched th { text-align: left; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 10px; border-bottom: 2px solid var(--line); }
+.sched td { padding: 9px 10px; border-bottom: 1px solid var(--line); }
+.sched tr.last td { font-weight: 700; }
+.tl-docs a { margin-right: 0; }
+p.tl-docs { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; font-weight: 600; }
 .timeline .body p.tl-docs { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 6px; font-size: .9rem; font-weight: 600; }
 .tl-docs a::before { content: "PDF"; font-size: .62rem; font-weight: 800; letter-spacing: .04em; background: var(--band); color: var(--yellow); border-radius: 3px; padding: 1px 4px; margin-right: 6px; vertical-align: 1px; }
 .tl-docs a[data-tag]::before { content: attr(data-tag); }
@@ -239,15 +248,15 @@ footer p { opacity: .85; max-width: 60ch; }
     </div>
     <div class="when" id="quando">
       <div>
-        <div class="label">Assembleia Geral Ordinária Eleitoral</div>
-        <div class="big" id="when-big">2ª quinzena de novembro de 2026</div>
-        <p class="note" id="when-note">Na sede da AABB Balsas. Data e horário serão definidos e divulgados pela Comissão Eleitoral.</p>
+        <div class="label">Votação presencial · Assembleia Geral Ordinária Eleitoral</div>
+        <div class="big" id="when-big">De 16 a 22 de novembro de 2026</div>
+        <p class="note" id="when-note">Na sede da AABB Balsas, com cédula de papel. Segunda a sexta, das 18h30 às 21h30; sábado, das 11h às 17h; domingo, das 11h às 16h, quando a votação se encerra.</p>
         <div class="count" id="count" hidden></div>
       </div>
       <div class="cal" aria-label="Calendário de novembro de 2026">
         <div class="cal-title"><span>Novembro 2026</span></div>
         <div class="cal-grid" id="cal"></div>
-        <div class="cal-legend" id="cal-legend"><i></i> Período previsto para a votação</div>
+        <div class="cal-legend" id="cal-legend"><i></i> Dias de votação</div>
       </div>
     </div>
   </div>
@@ -332,6 +341,10 @@ footer p { opacity: .85; max-width: 60ch; }
           <div class="when-t">08/10/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Ofício nº 01/2026 da Comissão Eleitoral</h3><p>A Comissão solicita à Presidência do Conselho de Administração suporte logístico para os seus membros durante a votação e a apuração (alimentação, água, transporte e materiais de apoio) e a preparação do espaço de votação presencial na sede, com sinalização, acessibilidade, privacidade na cabine, guarda das urnas e espaço para os fiscais das chapas.</p><p class="tl-docs"><a href="docs/Oficio-01-2026-Comissao-Eleitoral-2026-10-08.pdf" target="_blank" rel="noopener">Ofício nº 01/2026 (PDF)</a></p></div>
         </li>
+        <li data-date="2026-10-08">
+          <div class="when-t">08/10/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Resolução Operacional nº 01/2026: dias, horários e forma de votação</h3><p>A Comissão Eleitoral define a votação presencial, com cédula de papel, na sede da AABB Balsas, de 16 a 22/11/2026, com encerramento em 22/11 às 16h, e disciplina a identificação dos eleitores, a guarda das urnas, a fiscalização e a apuração.</p><p class="tl-docs"><a href="docs/Resolucao-Operacional-01-2026-Votacao-2026-10-08.pdf" target="_blank" rel="noopener">Resolução Operacional (PDF)</a></p></div>
+        </li>
         <li data-date="2026-10-09">
           <div class="when-t">09/10/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Resposta aos questionamentos</h3><p>A Comissão Eleitoral responde ao requerimento de esclarecimentos: explica a prorrogação do prazo e o protocolo das chapas e indefere os pedidos de anulação e reinício do processo e de constituição de nova Comissão. Documento entregue em 09/10/2026.</p><p class="tl-docs"><a href="docs/Termo-Resposta-Questionamentos-2026-10-09.pdf" target="_blank" rel="noopener">Termo de resposta (PDF)</a></p></div>
@@ -341,8 +354,8 @@ footer p { opacity: .85; max-width: 60ch; }
           <div class="body"><h3>Campanha eleitoral</h3><p>Autorizada pela Resolução de 08/10/2026 para as chapas deferidas. As chapas divulgam candidaturas e propostas por meios próprios; nos canais oficiais da AABB, a divulgação é apenas institucional e com tratamento igual. Todo material de campanha passa antes pela aprovação da Comissão (Regulamento, Art. 20).</p><p class="tl-docs"><a href="docs/Resolucao-Campanha-Divulgacao-Institucional-2026-10-08.pdf" target="_blank" rel="noopener">Resolução (PDF)</a></p></div>
         </li>
         <li data-date="" data-phase="votacao">
-          <div class="when-t">2ª quinzena<br>de nov/2026</div><div class="rail"><span class="dot"></span></div>
-          <div class="body"><h3>Votação, apuração e resultado</h3><p>Assembleia Geral Ordinária Eleitoral na sede do clube. A apuração começa logo após o encerramento da votação, e a chapa vencedora é proclamada em seguida.</p></div>
+          <div class="when-t">16 a 22/11/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Votação, apuração e resultado</h3><p>Votação presencial na sede do clube, em sete dias, como um único turno. Encerrada a votação em 22/11/2026, às 16h, a Comissão inicia a apuração imediatamente, e a chapa eleita é proclamada após a conferência dos requisitos do Regulamento.</p><p class="tl-docs"><a href="docs/Resolucao-Operacional-01-2026-Votacao-2026-10-08.pdf" target="_blank" rel="noopener">Resolução Operacional (PDF)</a></p></div>
         </li>
         <li data-date="2027-01-01">
           <div class="when-t">01/01/2027</div><div class="rail"><span class="dot"></span></div>
@@ -399,19 +412,33 @@ footer p { opacity: .85; max-width: 60ch; }
       </div>
 
       <div style="margin-top:40px">
-        <h3>Formato da votação: <span class="pend" id="formato">a definir pela Comissão</span></h3>
+        <h3>Dias, horários e forma de votação</h3>
+        <p style="color:var(--muted);margin-top:6px;max-width:70ch">O voto é <b>presencial, pessoal e secreto</b>, com cédula de papel depositada em urna, na sede da AABB Balsas. Você pode votar em qualquer um dos dias abaixo, uma única vez.</p>
+        <div class="sched-wrap"><table class="sched">
+          <thead><tr><th>Data</th><th>Dia</th><th>Horário</th></tr></thead>
+          <tbody>
+            <tr><td>16/11/2026</td><td>Segunda-feira</td><td>18h30 às 21h30</td></tr>
+            <tr><td>17/11/2026</td><td>Terça-feira</td><td>18h30 às 21h30</td></tr>
+            <tr><td>18/11/2026</td><td>Quarta-feira</td><td>18h30 às 21h30</td></tr>
+            <tr><td>19/11/2026</td><td>Quinta-feira</td><td>18h30 às 21h30</td></tr>
+            <tr><td>20/11/2026</td><td>Sexta-feira</td><td>18h30 às 21h30</td></tr>
+            <tr><td>21/11/2026</td><td>Sábado</td><td>11h às 17h</td></tr>
+            <tr class="last"><td>22/11/2026</td><td>Domingo</td><td>11h às 16h · encerramento</td></tr>
+          </tbody>
+        </table></div>
         <div class="modes">
           <div class="mode">
-            <b>Se for presencial</b>
-            <p>Leve a <b>carteira social</b> ou outro documento oficial com foto. Você assina a folha de votação e deposita o voto na urna. Se o seu nome não constar da folha, você vota em separado.</p>
-            <p class="art" style="font-size:.82rem">Regulamento, Arts. 27 e 28</p>
+            <b>Na hora de votar</b>
+            <p>Leve a <b>carteira social</b> ou outro documento oficial com foto. A Comissão confere o seu direito ao voto, você assina a folha de votação e recebe <b>duas cédulas diferentes</b>: uma para o Conselho Deliberativo e de Administração e outra para o Conselho Fiscal.</p>
+            <p class="art" style="font-size:.82rem">Resolução Operacional nº 01/2026, Arts. 2º e 3º · Regulamento, Arts. 26 a 28</p>
           </div>
           <div class="mode">
-            <b>Se for eletrônica</b>
-            <p>Você vota pelo sistema informatizado do clube, com o seu <b>login e senha</b>. As orientações de acesso serão divulgadas pela Comissão Eleitoral.</p>
-            <p class="art" style="font-size:.82rem">Regulamento, Art. 30</p>
+            <b>Segurança dos votos</b>
+            <p>Os sete dias formam um único turno. As urnas são lacradas ao fim de cada dia, sem abertura nem resultado parcial, e ficam guardadas em local seguro. Os fiscais das chapas podem acompanhar. A apuração começa logo após o encerramento, em 22/11/2026, às 16h.</p>
+            <p class="art" style="font-size:.82rem">Resolução Operacional nº 01/2026, Arts. 1º, 4º a 6º</p>
           </div>
         </div>
+        <p class="tl-docs" style="margin-top:14px"><a href="docs/Resolucao-Operacional-01-2026-Votacao-2026-10-08.pdf" target="_blank" rel="noopener">Resolução Operacional nº 01/2026 (PDF)</a></p>
       </div>
 
       <div class="facts">
@@ -452,6 +479,7 @@ footer p { opacity: .85; max-width: 60ch; }
         <a class="doc" href="docs/Termo-Indeferimento-Chapa-Adriano-2026-10-02.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de indeferimento do pedido de registro</b><small>Comissão Eleitoral · 02/10/2026</small></span></a>
         <a class="doc" href="docs/Certidao-Decurso-Prazo-Decisao-Final-2026-10-08.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Certidão de decurso de prazo e decisão final</b><small>Comissão Eleitoral · 08/10/2026</small></span></a>
         <a class="doc" href="docs/Termo-Resposta-Questionamentos-2026-10-09.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de resposta aos questionamentos e pedidos</b><small>Comissão Eleitoral · entregue em 09/10/2026</small></span></a>
+        <a class="doc" href="docs/Resolucao-Operacional-01-2026-Votacao-2026-10-08.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Resolução Operacional nº 01/2026 · votação e apuração</b><small>Comissão Eleitoral · 08/10/2026</small></span></a>
         <a class="doc" href="docs/Resolucao-Campanha-Divulgacao-Institucional-2026-10-08.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Resolução sobre campanha eleitoral e divulgação institucional</b><small>Comissão Eleitoral · 08/10/2026</small></span></a>
         <a class="doc" href="docs/Oficio-01-2026-Comissao-Eleitoral-2026-10-08.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Ofício nº 01/2026 · suporte logístico e espaço de votação</b><small>Comissão Eleitoral à Presidência do Conselho de Administração · 08/10/2026</small></span></a>
       </div>
@@ -504,15 +532,15 @@ footer p { opacity: .85; max-width: 60ch; }
         </details>
         <details>
           <summary>Entrei no clube há pouco tempo. Posso votar?</summary>
-          <div class="a"><p>Pode, se tiver sido admitido até 90 dias antes da data da eleição. Como a data ainda vai ser definida, a data-limite de admissão será informada junto com ela.</p><p class="art">Regulamento, Art. 14</p></div>
+          <div class="a"><p>Pode, se tiver sido admitido no quadro social até 90 dias antes da eleição e estiver em dia com as contribuições. Em caso de dúvida sobre a sua situação, procure a Administração do clube antes do período de votação.</p><p class="art">Regulamento, Art. 14</p></div>
         </details>
         <details>
           <summary>Posso mandar alguém votar por mim?</summary>
           <div class="a"><p>Não. O voto por procuração é proibido, tanto na votação presencial quanto na eletrônica.</p><p class="art">Regulamento, Arts. 28 e 30</p></div>
         </details>
         <details>
-          <summary>A votação vai ser presencial ou pela internet?</summary>
-          <div class="a"><p>Quem decide é a Comissão Eleitoral. O Regulamento permite as duas formas: presencial, com carteira social ou documento com foto, ou eletrônica, com login e senha no sistema do clube. O formato será publicado nesta página.</p><p class="art">Regulamento, Arts. 4º, 28 e 30</p></div>
+          <summary>A votação é presencial ou pela internet?</summary>
+          <div class="a"><p>Presencial. A Comissão Eleitoral definiu o voto presencial, pessoal e secreto, com cédula de papel depositada em urna, na sede da AABB Balsas, de 16 a 22/11/2026. Não haverá votação pela internet.</p><p class="art">Resolução Operacional nº 01/2026, Arts. 1º e 2º</p></div>
         </details>
         <details>
           <summary>Meu nome não está na folha de votação. E agora?</summary>
@@ -529,6 +557,14 @@ footer p { opacity: .85; max-width: 60ch; }
         <details>
           <summary>Como funcionam os recursos?</summary>
           <div class="a"><p>O recurso é um direito das chapas. Ele é apresentado por petição fundamentada, dirigida à Presidente da Comissão Eleitoral, em até 2 dias úteis após o fato. A Comissão analisa e, se possível, decide na hora. Associados com dúvidas podem procurar a Administração do clube.</p><p class="art">Regulamento, Arts. 32 e 33</p></div>
+        </details>
+        <details>
+          <summary>Posso votar em qualquer dia? E se eu já estiver na fila no último horário?</summary>
+          <div class="a"><p>Sim. Você pode votar em qualquer um dos sete dias, dentro do horário, uma única vez: a Comissão mantém um controle integrado de todos os dias. No domingo, 22/11, quem já estiver na fila às 16h ainda poderá votar.</p><p class="art">Resolução Operacional nº 01/2026, Arts. 1º e 3º</p></div>
+        </details>
+        <details>
+          <summary>Quando sai o resultado?</summary>
+          <div class="a"><p>A apuração começa logo após o encerramento, em 22/11/2026, às 16h, na sede do clube, e pode ser acompanhada pelos candidatos e fiscais. Não há resultado parcial nos dias anteriores. A proclamação ocorre depois da conferência do quórum e dos demais requisitos do Regulamento.</p><p class="art">Resolução Operacional nº 01/2026, Arts. 1º e 6º · Regulamento, Arts. 34 e 35</p></div>
         </details>
         <details>
           <summary>Quando começa a campanha e o que é permitido?</summary>
@@ -559,8 +595,7 @@ footer p { opacity: .85; max-width: 60ch; }
      grupos: [ { titulo: "Conselho de Administração", membros: [["Presidente", "Nome"], ["Vice-Presidente ...", "Nome"]] },
                { titulo: "Conselho Deliberativo", membros: [...] },
                { titulo: "Conselho Fiscal", membros: [...] } ] }                     */
-const DATA_ELEICAO = null;
-const FORMATO = null;
+const FORMATO = "Presencial, com cédula de papel";
 const CHAPAS = [
   { numero: "01", nome: "O Trabalho Não Pode Parar",
     docs: [["docs/Homologacao-Chapa-01-2026-10-02.pdf", "Ato de homologação"], ["docs/Requerimento-Registro-Chapa-01-2026-09-29.pdf", "Requerimento de registro"]],
@@ -601,13 +636,15 @@ const PEDIDOS_PENDENTES = [
     texto: "O pedido de registro foi indeferido em 02/10/2026. O prazo de regularização terminou em 07/10/2026 sem saneamento das pendências, e a Comissão Eleitoral manteve o indeferimento em decisão final." }
 ];
 /* Etapa atual da linha do tempo (data-phase); vazio para calcular automaticamente. */
-const ETAPA_ATUAL = "campanha";
+const ETAPA_ATUAL = "";
 const ATUALIZADO = "09/10/2026";
 
 document.getElementById("upd").textContent = ATUALIZADO;
-if (FORMATO) document.getElementById("formato").textContent = FORMATO;
 
-const eleicao = DATA_ELEICAO ? new Date(DATA_ELEICAO) : null;
+/* Votação de 16 a 22/11/2026 (horário de Balsas, UTC-3). */
+const INICIO_VOTACAO = new Date("2026-11-16T18:30:00-03:00");
+const FIM_VOTACAO = new Date("2026-11-22T16:00:00-03:00");
+const DIAS_VOTACAO = [16, 17, 18, 19, 20, 21, 22];
 
 /* Calendário de novembro de 2026 */
 (function () {
@@ -618,30 +655,27 @@ const eleicao = DATA_ELEICAO ? new Date(DATA_ELEICAO) : null;
   for (let i = 0; i < first; i++) cal.appendChild(document.createElement("div"));
   for (let d = 1; d <= 30; d++) {
     const e = document.createElement("div");
-    e.className = "d" + (d >= 16 ? " q" : "");
-    if (eleicao && eleicao.getMonth() === 10 && eleicao.getDate() === d) e.className += " set";
+    e.className = "d" + (DIAS_VOTACAO.includes(d) ? " q set" : "");
     e.textContent = d;
     cal.appendChild(e);
   }
-  if (eleicao) document.getElementById("cal-legend").innerHTML = '<i style="background:#EEDE34"></i> Dia da votação';
+  document.getElementById("cal-legend").innerHTML = '<i style="background:#EEDE34;box-shadow:none"></i> Dias de votação';
 })();
 
-/* Data definida: título e contagem regressiva */
-if (eleicao) {
-  const fmt = eleicao.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" });
-  const hora = eleicao.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
-  document.getElementById("when-big").textContent = fmt.charAt(0).toUpperCase() + fmt.slice(1) + ", às " + hora;
-  document.getElementById("when-note").textContent = "Na sede da AABB Balsas. Podem votar os associados admitidos até " +
-    new Date(eleicao.getTime() - 90 * 864e5).toLocaleDateString("pt-BR") + ".";
+/* Contagem regressiva até a abertura da votação */
+(function () {
   const box = document.getElementById("count");
-  box.hidden = false;
   const tick = () => {
-    let s = Math.max(0, Math.floor((eleicao - new Date()) / 1000));
+    const agora = new Date();
+    if (agora >= FIM_VOTACAO) { box.hidden = false; box.innerHTML = "<div><b>✓</b><small>Votação encerrada</small></div>"; return; }
+    if (agora >= INICIO_VOTACAO) { box.hidden = false; box.innerHTML = "<div><b>●</b><small>Votação em andamento</small></div>"; return; }
+    const s = Math.floor((INICIO_VOTACAO - agora) / 1000);
     const parts = [[Math.floor(s / 86400), "dias"], [Math.floor(s % 86400 / 3600), "horas"], [Math.floor(s % 3600 / 60), "min"]];
-    box.innerHTML = parts.map(([n, l]) => `<div><b>${String(n).padStart(2, "0")}</b><small>${l}</small></div>`).join("");
+    box.hidden = false;
+    box.innerHTML = parts.map(([n, l]) => `<div><b>${String(n).padStart(2, "0")}</b><small>${l}</small></div>`).join("") + '<div class="cd-lbl"><small>para a abertura da votação</small></div>';
   };
   tick(); setInterval(tick, 30000);
-}
+})();
 
 /* Linha do tempo: marca o que já passou e a etapa atual */
 (function () {
@@ -653,8 +687,7 @@ if (eleicao) {
     if (d && d < hoje) li.classList.add("done");
   });
   if (ETAPA_ATUAL) atual = items.find(li => li.dataset.phase === ETAPA_ATUAL);
-  else if (CHAPAS.length === 0) atual = items.find(li => li.dataset.phase === "analise");
-  else if (!eleicao || eleicao > hoje) atual = items.find(li => li.dataset.phase === "campanha");
+  else if (hoje < INICIO_VOTACAO) atual = items.find(li => li.dataset.phase === "campanha");
   else atual = items.find(li => li.dataset.phase === "votacao");
   if (atual) {
     atual.classList.add("now");
