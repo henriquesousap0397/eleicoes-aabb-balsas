@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Processo eleitoral 2026 da AABB Balsas: calendário, quem pode votar, como votar, chapas e documentos oficiais.">
+<meta property="og:title" content="Eleições AABB Balsas 2026">
+<meta property="og:description" content="Calendário, quem pode votar, como votar, chapas e documentos oficiais. Mandato 2027/2030.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta name="theme-color" content="#2D3E8E">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="logo-aabb-branco.png">
+<style>
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body { margin: 0; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<title>Eleições AABB Balsas 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: faixa azul institucional com a logo; página clara em coluna única;
+   o "objeto" central é o calendário de novembro com a quinzena da votação e a cédula de duas escolhas. */
+:root {
+  --band: #2D3E8E;        /* azul oficial (faixa do topo, igual nos dois temas) */
+  --band-ink: #FFFFFF;
+  --yellow: #EEDE34;      /* amarelo oficial */
+  --bg: #F5F6FA;          /* papel com leve viés azul */
+  --surface: #FFFFFF;
+  --ink: #18203F;
+  --muted: #5A6283;
+  --line: #DCE0EE;
+  --accent: #2D3E8E;      /* azul para links e títulos no claro */
+  --mark: #FBF6C4;        /* amarelo suave para destaques */
+  --mark-ink: #4A4300;
+  --display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E1330; --surface: #161D45; --ink: #E8EBF7; --muted: #A3AACB;
+    --line: #2A3366; --accent: #A9B5F2; --mark: #3A3712; --mark-ink: #F3E978;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E1330; --surface: #161D45; --ink: #E8EBF7; --muted: #A3AACB;
+  --line: #2A3366; --accent: #A9B5F2; --mark: #3A3712; --mark-ink: #F3E978;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.2rem); color: var(--accent); }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+.wrap { max-width: 980px; margin: 0 auto; padding-inline: 20px; }
+.eyebrow { font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.pend { background: var(--mark); color: var(--mark-ink); padding: 0 .35em; border-radius: 4px; font-weight: 600; white-space: nowrap; }
+
+/* Aviso de pré-visualização */
+.preview {
+  background: var(--yellow); color: #2B2700; font-size: .88rem; font-weight: 600; text-align: center;
+  padding: 8px 16px;
+}
+
+/* Faixa institucional */
+header.band { background: var(--band); color: var(--band-ink); }
+.band .wrap { padding-block: 28px 40px; display: grid; gap: 28px; }
+.band-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.band-top img { width: 132px; height: auto; display: block; }
+.band-top .issuer { font-size: .85rem; opacity: .85; text-align: right; }
+.band h1 { font-size: clamp(2.4rem, 8vw, 4.2rem); font-weight: 800; letter-spacing: -.01em; }
+.band h1 span { color: var(--yellow); }
+.band .lede { font-size: 1.1rem; max-width: 60ch; opacity: .92; margin-top: 8px; }
+
+/* Bloco data + calendário */
+.when {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 300px); gap: 28px; align-items: center;
+  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 22px;
+}
+.when .label { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; opacity: .8; font-weight: 700; }
+.when .big { font-family: var(--display); font-size: clamp(1.6rem, 4.5vw, 2.3rem); font-weight: 800; line-height: 1.1; margin-top: 4px; }
+.when .note { margin-top: 10px; font-size: .95rem; opacity: .9; }
+.count { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.count div { background: var(--yellow); color: #22205A; border-radius: 10px; padding: 8px 12px; min-width: 70px; text-align: center; }
+.count b { display: block; font-family: var(--display); font-size: 1.8rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.count small { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.cal { font-variant-numeric: tabular-nums; }
+.cal-title { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; display: flex; justify-content: space-between; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 3px; font-size: .82rem; text-align: center; }
+.cal-grid .dow { font-size: .68rem; font-weight: 700; opacity: .7; padding-bottom: 2px; }
+.cal-grid .d { padding: 5px 0; border-radius: 6px; opacity: .55; }
+.cal-grid .d.q { opacity: 1; background: rgba(238,222,52,.16); color: var(--yellow); font-weight: 700; box-shadow: inset 0 0 0 1px rgba(238,222,52,.45); }
+.cal-grid .d.set { background: var(--yellow); color: #22205A; font-weight: 800; }
+.cal-legend { margin-top: 8px; font-size: .78rem; opacity: .85; display: flex; align-items: center; gap: 6px; }
+.cal-legend i { width: 12px; height: 12px; border-radius: 3px; background: rgba(238,222,52,.16); box-shadow: inset 0 0 0 1px rgba(238,222,52,.6); display: inline-block; }
+
+/* Navegação */
+nav.jump {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--surface); border-bottom: 1px solid var(--line);
+}
+nav.jump ul { list-style: none; margin: 0 auto; padding: 0 12px; max-width: 980px; display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; }
+nav.jump a { display: block; padding: 14px 10px; font-weight: 600; font-size: .92rem; color: var(--ink); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; }
+nav.jump a:hover { border-bottom-color: var(--yellow); }
+
+main section { padding-block: 56px; border-bottom: 1px solid var(--line); }
+main section:last-child { border-bottom: 0; }
+.sec-head { display: grid; gap: 8px; margin-bottom: 28px; max-width: 65ch; }
+.sec-head p { color: var(--muted); }
+
+/* Linha do tempo */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+.timeline li { display: grid; grid-template-columns: 150px 28px minmax(0, 1fr); gap: 12px; }
+.timeline .when-t { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; padding-top: 2px; font-size: .95rem; }
+.timeline .rail { position: relative; display: flex; justify-content: center; }
+.timeline .rail::before { content: ""; position: absolute; top: 0; bottom: 0; width: 2px; background: var(--line); }
+.timeline li:first-child .rail::before { top: 10px; }
+.timeline li:last-child .rail::before { bottom: auto; height: 10px; }
+.timeline .dot { position: relative; margin-top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--surface); border: 3px solid var(--accent); }
+.timeline li.done .dot { background: var(--accent); }
+.timeline li.now .dot { background: var(--yellow); border-color: var(--band); width: 18px; height: 18px; margin-top: 4px; box-shadow: 0 0 0 4px var(--mark); }
+.timeline .body { padding-bottom: 26px; }
+.timeline .body p { color: var(--muted); font-size: .95rem; margin-top: 2px; }
+.timeline .body p.tl-docs { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 6px; font-size: .9rem; font-weight: 600; }
+.tl-docs a::before { content: "PDF"; font-size: .62rem; font-weight: 800; letter-spacing: .04em; background: var(--band); color: var(--yellow); border-radius: 3px; padding: 1px 4px; margin-right: 6px; vertical-align: 1px; }
+.timeline .tag { display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; padding: 2px 8px; border-radius: 99px; margin-left: 6px; vertical-align: 2px; }
+.timeline li.done .tag { background: var(--line); color: var(--muted); }
+.timeline li.now .tag { background: var(--yellow); color: #2B2700; }
+
+/* Quem vota */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.checklist { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+.checklist li { display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: 10px; }
+.checklist .ck { width: 22px; height: 22px; border-radius: 6px; display: grid; place-items: center; font-weight: 800; font-size: .8rem; margin-top: 2px; }
+.ok .ck { background: var(--accent); color: var(--surface); }
+.no .ck { background: var(--line); color: var(--ink); }
+.checklist .art { color: var(--muted); font-size: .82rem; }
+
+/* Cédula */
+.ballot { margin-top: 40px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: grid; gap: 20px; }
+.ballot-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.slip { border: 2px dashed var(--line); border-radius: 10px; padding: 16px; display: grid; gap: 10px; }
+.slip .n { font-family: var(--display); font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.slip .opt { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .92rem; }
+.slip .opt::before { content: ""; width: 18px; height: 18px; border: 2px solid var(--muted); border-radius: 4px; flex: none; }
+
+.modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.mode { border-top: 3px solid var(--accent); padding-top: 12px; display: grid; gap: 6px; }
+.mode p { color: var(--muted); font-size: .95rem; }
+
+.facts { margin-top: 40px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.fact b { display: block; font-family: var(--display); font-size: 2.2rem; color: var(--accent); line-height: 1; font-variant-numeric: tabular-nums; }
+.fact p { color: var(--muted); font-size: .92rem; margin-top: 6px; }
+
+/* Chapas */
+.chapas-empty { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 28px; display: grid; gap: 14px; }
+.chapas-empty .status { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+.chapas-empty .status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 0 3px var(--mark); }
+.chapas-empty ul { margin: 0; padding-left: 20px; color: var(--muted); display: grid; gap: 6px; }
+.chapas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.chapa { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: grid; gap: 14px; align-content: start; }
+.chapa .num { font-family: var(--display); font-size: 2.6rem; font-weight: 800; color: var(--accent); line-height: 1; }
+.chapa dl { margin: 0; display: grid; gap: 6px; font-size: .93rem; }
+.chapa dt { font-weight: 700; margin-top: 8px; }
+.chapa dd { margin: 0; display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dotted var(--line); padding-bottom: 4px; }
+.chapa dd span:first-child { color: var(--muted); }
+.chapa dd span:last-child { text-align: right; }
+
+/* Documentos */
+.docs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.doc { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: var(--ink); }
+.doc:hover { border-color: var(--accent); }
+.doc .ic { width: 48px; height: 56px; border-radius: 6px; background: var(--band); color: var(--yellow); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: .8rem; }
+.doc b { display: block; }
+.doc small { color: var(--muted); }
+
+.comissao { margin-top: 36px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.comissao ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.comissao li span { color: var(--muted); font-size: .88rem; }
+.contato { margin-top: 28px; background: var(--mark); color: var(--mark-ink); border-radius: 12px; padding: 16px 18px; }
+
+/* FAQ */
+.faq { display: grid; gap: 10px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.faq summary { cursor: pointer; padding: 16px 18px; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--display); font-size: 1.4rem; line-height: 1; color: var(--accent); }
+.faq details[open] summary::after { content: "–"; }
+.faq .a { padding: 0 18px 18px; color: var(--muted); max-width: 70ch; display: grid; gap: 8px; }
+.faq .art { font-size: .82rem; }
+
+footer { background: var(--band); color: var(--band-ink); }
+footer .wrap { padding-block: 32px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .88rem; }
+footer img { width: 96px; height: auto; display: block; }
+footer p { opacity: .85; max-width: 60ch; }
+
+@media (max-width: 720px) {
+  .when, .cols, .ballot-grid, .modes, .docs, .comissao { grid-template-columns: minmax(0, 1fr); }
+  .facts { grid-template-columns: minmax(0, 1fr); }
+  .timeline li { grid-template-columns: 22px minmax(0, 1fr); }
+  .timeline .when-t { grid-column: 2; text-align: left; order: 0; }
+  .timeline .rail { grid-column: 1; grid-row: 1 / span 2; }
+  .timeline .body { grid-column: 2; }
+  .band-top .issuer { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="preview">Versão de pré-visualização · aguardando aprovação da Comissão Eleitoral</div>
+
+<header class="band">
+  <div class="wrap">
+    <div class="band-top">
+      <img src="logo-aabb-branco.png" alt="AABB Balsas-MA">
+      <div class="issuer">Comissão Eleitoral<br>Associação Atlética Banco do Brasil – Balsas/MA</div>
+    </div>
+    <div>
+      <h1>Eleições <span>2026</span></h1>
+      <p class="lede">Escolha dos Conselhos de Administração, Deliberativo e Fiscal para o mandato 2027/2030. Aqui você encontra o calendário, quem pode votar, como votar e os documentos oficiais.</p>
+    </div>
+    <div class="when" id="quando">
+      <div>
+        <div class="label">Assembleia Geral Ordinária Eleitoral</div>
+        <div class="big" id="when-big">2ª quinzena de novembro de 2026</div>
+        <p class="note" id="when-note">Na sede da AABB Balsas. Data e horário serão definidos e divulgados pela Comissão Eleitoral.</p>
+        <div class="count" id="count" hidden></div>
+      </div>
+      <div class="cal" aria-label="Calendário de novembro de 2026">
+        <div class="cal-title"><span>Novembro 2026</span></div>
+        <div class="cal-grid" id="cal"></div>
+        <div class="cal-legend" id="cal-legend"><i></i> Período previsto para a votação</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Seções">
+  <ul>
+    <li><a href="#calendario">Calendário</a></li>
+    <li><a href="#votar">Como votar</a></li>
+    <li><a href="#chapas">Chapas</a></li>
+    <li><a href="#documentos">Documentos</a></li>
+    <li><a href="#duvidas">Dúvidas</a></li>
+  </ul>
+</nav>
+
+<main>
+  <section id="calendario">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Calendário eleitoral</span>
+        <h2>As etapas do processo</h2>
+        <p>Datas conforme o Estatuto Social, o Regulamento de Eleições 2026 e o Edital da Comissão Eleitoral de 21/09/2026.</p>
+      </div>
+      <ol class="timeline" id="timeline">
+        <li data-date="2026-09-01">
+          <div class="when-t">01/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Regulamento de Eleições 2026</h3><p>Aprovado pelo Conselho Deliberativo, com as regras de inscrição, campanha, votação e apuração.</p><p class="tl-docs"><a href="docs/Regulamento-de-Eleicoes-2026.pdf" target="_blank" rel="noopener">Regulamento de Eleições (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-09-03">
+          <div class="when-t">03/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Abertura do processo eleitoral</h3><p>O Conselho Deliberativo torna pública a convocação para apresentação e registro de chapas, e o seu Presidente nomeia a Comissão Eleitoral.</p><p class="tl-docs"><a href="docs/Convocacao-Registro-de-Chapas-2026-09-03.pdf" target="_blank" rel="noopener">Convocação (PDF)</a><a href="docs/Nomeacao-Comissao-Eleitoral-2026-09-03.pdf" target="_blank" rel="noopener">Nomeação da Comissão (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-09-20">
+          <div class="when-t">20/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Registro de chapa protocolado</h3><p>Chapa encabeçada por Kleiton Silva dos Santos protocola na Secretaria da AABB o requerimento de registro (13h00) e um aditivo que inclui um nome no Conselho Fiscal (13h30).</p><p class="tl-docs"><a href="docs/Requerimento-Registro-Chapa-Kleiton-2026-09-20.pdf" target="_blank" rel="noopener">Requerimento (PDF)</a><a href="docs/Aditivo-Requerimento-Registro-Chapa-Kleiton-2026-09-20.pdf" target="_blank" rel="noopener">Aditivo (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-09-21">
+          <div class="when-t">21/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Prorrogação do prazo das chapas</h3><p>Edital da Comissão Eleitoral amplia o prazo de registro, que era 20/09/2026, para 30/09/2026, para assegurar ampla publicidade e participação dos associados.</p><p class="tl-docs"><a href="docs/Edital-Convocacao-Eleicoes-2026-09-21.pdf" target="_blank" rel="noopener">Edital de 21/09/2026 (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-09-23">
+          <div class="when-t">23/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Manifestação de membro do Conselho Deliberativo</h3><p>Cristiano da Silva registra ciência e concordância com a instauração do processo eleitoral e com a nomeação da Comissão Eleitoral, que não assinou na data por estar em viagem.</p><p class="tl-docs"><a href="docs/Manifestacao-Cristiano-da-Silva-2026-09-23.pdf" target="_blank" rel="noopener">Manifestação (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-09-30">
+          <div class="when-t">30/09/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Prazo final para registro das chapas</h3><p>Data definida pelo Edital de 21/09/2026. O protocolo foi feito na Administração da AABB, com comprovante de recebimento.</p></div>
+        </li>
+        <li data-date="2026-10-01">
+          <div class="when-t">01/10/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Declaração de integrante de chapa</h3><p>Leydervan de Jesus Amorim Mousinho declara ciência e concordância com a sua participação na chapa encabeçada por Kleiton Silva dos Santos.</p><p class="tl-docs"><a href="docs/Declaracao-Leydervan-Mousinho-2026-10-01.pdf" target="_blank" rel="noopener">Declaração (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-10-06">
+          <div class="when-t">06/10/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Desistência de candidatura</h3><p>Gilmario Coutinho de Amorim declara a desistência da sua candidatura na chapa encabeçada por Adriano da Silva Reis.</p><p class="tl-docs"><a href="docs/Desistencia-Gilmario-Amorim-2026-10-06.pdf" target="_blank" rel="noopener">Declaração de desistência (PDF)</a></p></div>
+        </li>
+        <li data-date="" data-phase="analise">
+          <div class="when-t"><span class="pend">A definir</span></div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Análise e homologação das chapas</h3><p>A Comissão Eleitoral analisa os pedidos de registro e informa o resultado às chapas em até 2 dias úteis. As chapas homologadas recebem um número, pela ordem de registro.</p></div>
+        </li>
+        <li data-date="" data-phase="campanha">
+          <div class="when-t"><span class="pend">A definir</span></div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Campanha eleitoral</h3><p>Começa após a homologação. Cada chapa tem espaço e condições iguais nos meios de comunicação do clube, e todo material de campanha passa antes pela aprovação da Comissão.</p></div>
+        </li>
+        <li data-date="" data-phase="votacao">
+          <div class="when-t">2ª quinzena<br>de nov/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Votação, apuração e resultado</h3><p>Assembleia Geral Ordinária Eleitoral na sede do clube. A apuração começa logo após o encerramento da votação, e a chapa vencedora é proclamada em seguida.</p></div>
+        </li>
+        <li data-date="2027-01-01">
+          <div class="when-t">01/01/2027</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Posse</h3><p>Os eleitos para os Conselhos de Administração, Deliberativo e Fiscal assumem o mandato 2027/2030.</p></div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="votar">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Quem vota e como votar</span>
+        <h2>O seu voto, passo a passo</h2>
+        <p>O voto é secreto e direto, em turno único.</p>
+      </div>
+
+      <div class="cols">
+        <div>
+          <h3 style="margin-bottom:14px">Pode votar o associado que</h3>
+          <ul class="checklist ok">
+            <li><span class="ck">✓</span><div>foi admitido no quadro social <b>até 90 dias antes</b> da eleição;<div class="art">Regulamento, Art. 14</div></div></li>
+            <li><span class="ck">✓</span><div>está <b>em dia com as contribuições sociais</b> até o dia anterior à votação;<div class="art">Regulamento, Art. 14</div></div></li>
+            <li><span class="ck">✓</span><div>está em pleno gozo dos seus direitos de associado.<div class="art">Regulamento, Art. 14</div></div></li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom:14px">Não pode votar</h3>
+          <ul class="checklist no">
+            <li><span class="ck">✕</span><div>quem está cumprindo <b>pena de suspensão</b>, mesmo que tenha recorrido;<div class="art">Regulamento, Art. 15</div></div></li>
+            <li><span class="ck">✕</span><div><b>por procuração</b>: o voto é pessoal, em qualquer formato.<div class="art">Regulamento, Arts. 28 e 30</div></div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="ballot">
+        <div>
+          <span class="eyebrow">Na hora de votar</span>
+          <h3 style="margin-top:4px">Você faz duas escolhas separadas</h3>
+        </div>
+        <div class="ballot-grid">
+          <div class="slip">
+            <span class="n">1</span>
+            <b>Conselho Deliberativo e de Administração</b>
+            <span class="opt">Uma chapa</span>
+          </div>
+          <div class="slip">
+            <span class="n">2</span>
+            <b>Conselho Fiscal</b>
+            <span class="opt">Uma chapa</span>
+          </div>
+        </div>
+        <p style="color:var(--muted);font-size:.92rem">Regulamento, Art. 26. O voto com qualquer sinal ou marca que o identifique é anulado (Art. 31).</p>
+      </div>
+
+      <div style="margin-top:40px">
+        <h3>Formato da votação: <span class="pend" id="formato">a definir pela Comissão</span></h3>
+        <div class="modes">
+          <div class="mode">
+            <b>Se for presencial</b>
+            <p>Leve a <b>carteira social</b> ou outro documento oficial com foto. Você assina a folha de votação e deposita o voto na urna. Se o seu nome não constar da folha, você vota em separado.</p>
+            <p class="art" style="font-size:.82rem">Regulamento, Arts. 27 e 28</p>
+          </div>
+          <div class="mode">
+            <b>Se for eletrônica</b>
+            <p>Você vota pelo sistema informatizado do clube, com o seu <b>login e senha</b>. As orientações de acesso serão divulgadas pela Comissão Eleitoral.</p>
+            <p class="art" style="font-size:.82rem">Regulamento, Art. 30</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="facts">
+        <div class="fact"><b>100</b><p>votantes, no mínimo, para a eleição valer, já que o clube tem mais de 1.000 associados (Art. 34).</p></div>
+        <div class="fact"><b>Maioria</b><p>simples dos votos elege a chapa. Se houver só uma chapa inscrita, ela é eleita com qualquer número de votos (Arts. 34 e 36).</p></div>
+        <div class="fact"><b>2 dias úteis</b><p>é o prazo para uma chapa apresentar recurso à Comissão Eleitoral, contado do fato que o motivou (Arts. 32 e 33).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="chapas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Chapas e candidatos</span>
+        <h2>Chapas inscritas</h2>
+        <p>As chapas aparecem pela ordem de registro, com o mesmo espaço e o mesmo formato para todas.</p>
+      </div>
+      <div id="chapas-out"></div>
+    </div>
+  </section>
+
+  <section id="documentos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Documentos oficiais</span>
+        <h2>Regras e editais</h2>
+        <p>Em caso de dúvida, vale o Estatuto Social, que está acima do Regulamento.</p>
+      </div>
+      <div class="docs">
+        <a class="doc" href="docs/Edital-Convocacao-Eleicoes-2026-09-21.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Edital de Convocação das Eleições</b><small>Comissão Eleitoral · 21/09/2026</small></span></a>
+        <a class="doc" href="docs/Regulamento-de-Eleicoes-2026.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Regulamento de Eleições 2026</b><small>Conselho Deliberativo · 01/09/2026</small></span></a>
+        <a class="doc" href="docs/Convocacao-Registro-de-Chapas-2026-09-03.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Convocação para registro de chapas</b><small>Conselho Deliberativo · 03/09/2026</small></span></a>
+        <a class="doc" href="docs/Estatuto-Social-AABB-Balsas-2017.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Estatuto Social da AABB Balsas</b><small>Versão de 2017</small></span></a>
+        <a class="doc" href="docs/Nomeacao-Comissao-Eleitoral-2026-09-03.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Nomeação da Comissão Eleitoral</b><small>Presidente do Conselho Deliberativo · 03/09/2026</small></span></a>
+        <a class="doc" href="docs/Manifestacao-Cristiano-da-Silva-2026-09-23.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Manifestação de ciência e concordância</b><small>Cristiano da Silva, Conselho Deliberativo · 23/09/2026</small></span></a>
+      </div>
+
+      <h3 style="margin-top:36px">Documentos das chapas</h3>
+      <p style="color:var(--muted);margin:6px 0 14px;max-width:65ch">Requerimentos e declarações relativos às chapas, publicados à medida que são apresentados. O registro só vale depois da homologação pela Comissão Eleitoral.</p>
+      <div class="docs">
+        <a class="doc" href="docs/Requerimento-Registro-Chapa-Kleiton-2026-09-20.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Requerimento de registro · Chapa encabeçada por Kleiton Silva dos Santos</b><small>Protocolado em 20/09/2026, 13h00</small></span></a>
+        <a class="doc" href="docs/Aditivo-Requerimento-Registro-Chapa-Kleiton-2026-09-20.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Aditivo ao requerimento · Chapa encabeçada por Kleiton Silva dos Santos</b><small>Protocolado em 20/09/2026, 13h30</small></span></a>
+        <a class="doc" href="docs/Declaracao-Leydervan-Mousinho-2026-10-01.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Declaração de integrante · Chapa encabeçada por Kleiton Silva dos Santos</b><small>Leydervan de Jesus Amorim Mousinho · 01/10/2026</small></span></a>
+        <a class="doc" href="docs/Desistencia-Gilmario-Amorim-2026-10-06.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Desistência de candidatura · Chapa encabeçada por Adriano da Silva Reis</b><small>Gilmario Coutinho de Amorim · 06/10/2026</small></span></a>
+      </div>
+
+      <div class="comissao">
+        <div>
+          <h3>Comissão Eleitoral · titulares</h3>
+          <ul>
+            <li>Maria do Socorro Barros Borba <span>· Presidente</span></li>
+            <li>Francisco Heric Lima dos Santos <span>· Suplente da Presidente</span></li>
+            <li>Kauhe Antonio C. Silva <span>· Secretário</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Comissão Eleitoral · suplentes</h3>
+          <ul>
+            <li>Antonio José Santana Coelho Sousa</li>
+            <li>Dorismar Moreira Filho</li>
+            <li>Janes Vieira dos Santos</li>
+          </ul>
+        </div>
+      </div>
+      <p style="color:var(--muted);font-size:.88rem;margin-top:18px;max-width:70ch">Para proteger dados pessoais, os CPFs aparecem tarjados e os documentos assinados pelo gov.br são publicados sem os dados internos da assinatura digital. Os originais estão com a Comissão Eleitoral.</p>
+      <p class="contato"><b>Dúvidas, pedidos e recursos:</b> procure a Administração da AABB Balsas, na Rua Isaac Martins, Centro, no horário de funcionamento administrativo. Pedidos formais das chapas são dirigidos à Presidente da Comissão Eleitoral.</p>
+    </div>
+  </section>
+
+  <section id="duvidas">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Perguntas frequentes</span>
+        <h2>Dúvidas comuns</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Estou com a mensalidade atrasada. Posso votar?</summary>
+          <div class="a"><p>Só se regularizar. Para votar, o associado precisa estar em dia com as contribuições sociais até o dia anterior à votação.</p><p class="art">Regulamento, Art. 14</p></div>
+        </details>
+        <details>
+          <summary>Entrei no clube há pouco tempo. Posso votar?</summary>
+          <div class="a"><p>Pode, se tiver sido admitido até 90 dias antes da data da eleição. Como a data ainda vai ser definida, a data-limite de admissão será informada junto com ela.</p><p class="art">Regulamento, Art. 14</p></div>
+        </details>
+        <details>
+          <summary>Posso mandar alguém votar por mim?</summary>
+          <div class="a"><p>Não. O voto por procuração é proibido, tanto na votação presencial quanto na eletrônica.</p><p class="art">Regulamento, Arts. 28 e 30</p></div>
+        </details>
+        <details>
+          <summary>A votação vai ser presencial ou pela internet?</summary>
+          <div class="a"><p>Quem decide é a Comissão Eleitoral. O Regulamento permite as duas formas: presencial, com carteira social ou documento com foto, ou eletrônica, com login e senha no sistema do clube. O formato será publicado nesta página.</p><p class="art">Regulamento, Arts. 4º, 28 e 30</p></div>
+        </details>
+        <details>
+          <summary>Meu nome não está na folha de votação. E agora?</summary>
+          <div class="a"><p>Na votação presencial, você vota em separado, desde que atenda às condições para votar: admissão até 90 dias antes da eleição, contribuições em dia e nenhuma suspensão.</p><p class="art">Regulamento, Art. 27</p></div>
+        </details>
+        <details>
+          <summary>Quem pode ser candidato?</summary>
+          <div class="a"><p>Para Presidente, Vice-Presidentes Administrativo e Financeiro e 2 suplentes de Vice-Presidente, é preciso ser associado <b>Efetivo há mais de 6 meses</b>, entre outros requisitos. Para os demais cargos, ser associado há <b>mais de 3 meses</b> e estar em dia com as obrigações. O prazo para registrar chapas terminou em 30/09/2026.</p><p class="art">Regulamento, Arts. 16 e 17 · Estatuto, Arts. 37 e 38</p></div>
+        </details>
+        <details>
+          <summary>Quando a eleição pode ser anulada?</summary>
+          <div class="a"><p>Quando houver fraude que comprometa a lisura do processo, descumprimento das normas ou quando os votos brancos e nulos somarem mais que os votos válidos. Nesse caso, a Comissão convoca nova Assembleia em até 30 dias.</p><p class="art">Regulamento, Arts. 23 e 24</p></div>
+        </details>
+        <details>
+          <summary>Como funcionam os recursos?</summary>
+          <div class="a"><p>O recurso é um direito das chapas. Ele é apresentado por petição fundamentada, dirigida à Presidente da Comissão Eleitoral, em até 2 dias úteis após o fato. A Comissão analisa e, se possível, decide na hora. Associados com dúvidas podem procurar a Administração do clube.</p><p class="art">Regulamento, Arts. 32 e 33</p></div>
+        </details>
+        <details>
+          <summary>Quando os eleitos assumem?</summary>
+          <div class="a"><p>Em 1º de janeiro de 2027, para o mandato 2027/2030.</p><p class="art">Regulamento, Art. 37</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="logo-aabb-branco.png" alt="AABB Balsas-MA">
+    <p>Página oficial do processo eleitoral 2026 da AABB Balsas. Conteúdo sob responsabilidade da Comissão Eleitoral. Atualizado em <span id="upd"></span>.</p>
+  </div>
+</footer>
+
+<script>
+/* ===== Dados que a Comissão Eleitoral atualiza =====
+   DATA_ELEICAO: "2026-11-21T08:00" quando a data e o horário forem definidos; null enquanto não forem.
+   FORMATO: "Presencial", "Eletrônica" ou "Presencial e eletrônica"; null enquanto não for definido.
+   CHAPAS: preencher após a homologação, na ordem de registro. Exemplo de formato:
+   { numero: 1, nome: "Nome da chapa",
+     grupos: [ { titulo: "Conselho de Administração", membros: [["Presidente", "Nome"], ["Vice-Presidente ...", "Nome"]] },
+               { titulo: "Conselho Deliberativo", membros: [...] },
+               { titulo: "Conselho Fiscal", membros: [...] } ] }                     */
+const DATA_ELEICAO = null;
+const FORMATO = null;
+const CHAPAS = [];
+const ATUALIZADO = "09/10/2026";
+
+document.getElementById("upd").textContent = ATUALIZADO;
+if (FORMATO) document.getElementById("formato").textContent = FORMATO;
+
+const eleicao = DATA_ELEICAO ? new Date(DATA_ELEICAO) : null;
+
+/* Calendário de novembro de 2026 */
+(function () {
+  const cal = document.getElementById("cal");
+  const dows = ["D", "S", "T", "Q", "Q", "S", "S"];
+  dows.forEach(d => { const e = document.createElement("div"); e.className = "dow"; e.textContent = d; cal.appendChild(e); });
+  const first = new Date(2026, 10, 1).getDay();
+  for (let i = 0; i < first; i++) cal.appendChild(document.createElement("div"));
+  for (let d = 1; d <= 30; d++) {
+    const e = document.createElement("div");
+    e.className = "d" + (d >= 16 ? " q" : "");
+    if (eleicao && eleicao.getMonth() === 10 && eleicao.getDate() === d) e.className += " set";
+    e.textContent = d;
+    cal.appendChild(e);
+  }
+  if (eleicao) document.getElementById("cal-legend").innerHTML = '<i style="background:#EEDE34"></i> Dia da votação';
+})();
+
+/* Data definida: título e contagem regressiva */
+if (eleicao) {
+  const fmt = eleicao.toLocaleDateString("pt-BR", { weekday: "long", day: "numeric", month: "long" });
+  const hora = eleicao.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" });
+  document.getElementById("when-big").textContent = fmt.charAt(0).toUpperCase() + fmt.slice(1) + ", às " + hora;
+  document.getElementById("when-note").textContent = "Na sede da AABB Balsas. Podem votar os associados admitidos até " +
+    new Date(eleicao.getTime() - 90 * 864e5).toLocaleDateString("pt-BR") + ".";
+  const box = document.getElementById("count");
+  box.hidden = false;
+  const tick = () => {
+    let s = Math.max(0, Math.floor((eleicao - new Date()) / 1000));
+    const parts = [[Math.floor(s / 86400), "dias"], [Math.floor(s % 86400 / 3600), "horas"], [Math.floor(s % 3600 / 60), "min"]];
+    box.innerHTML = parts.map(([n, l]) => `<div><b>${String(n).padStart(2, "0")}</b><small>${l}</small></div>`).join("");
+  };
+  tick(); setInterval(tick, 30000);
+}
+
+/* Linha do tempo: marca o que já passou e a etapa atual */
+(function () {
+  const items = [...document.querySelectorAll("#timeline li")];
+  const hoje = new Date();
+  let atual = null;
+  items.forEach(li => {
+    const d = li.dataset.date ? new Date(li.dataset.date + "T23:59") : null;
+    if (d && d < hoje) li.classList.add("done");
+  });
+  if (CHAPAS.length === 0) atual = items.find(li => li.dataset.phase === "analise");
+  else if (!eleicao || eleicao > hoje) atual = items.find(li => li.dataset.phase === "campanha");
+  else atual = items.find(li => li.dataset.phase === "votacao");
+  if (atual) {
+    atual.classList.add("now");
+    atual.querySelector("h3").insertAdjacentHTML("beforeend", '<span class="tag">Etapa atual</span>');
+  }
+})();
+
+/* Chapas */
+(function () {
+  const out = document.getElementById("chapas-out");
+  if (CHAPAS.length === 0) {
+    out.innerHTML = `<div class="chapas-empty">
+      <span class="status">Em análise pela Comissão Eleitoral</span>
+      <p>O prazo de registro terminou em 30/09/2026. As chapas e os nomes dos candidatos serão publicados aqui depois da homologação.</p>
+      <ul>
+        <li>Cada chapa reúne os candidatos, efetivos e suplentes, dos Conselhos de Administração, Deliberativo e Fiscal.</li>
+        <li>As chapas recebem um número pela ordem cronológica de registro.</li>
+        <li>Nenhum candidato pode concorrer por mais de uma chapa ou cargo.</li>
+      </ul>
+    </div>`;
+    return;
+  }
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  out.innerHTML = '<div class="chapas-grid">' + CHAPAS.map(c => `
+    <article class="chapa">
+      <div><span class="eyebrow">Chapa</span><div class="num">${esc(c.numero)}</div></div>
+      <h3>${esc(c.nome)}</h3>
+      <dl>${c.grupos.map(g => `<dt>${esc(g.titulo)}</dt>` +
+        g.membros.map(([cargo, nome]) => `<dd><span>${esc(cargo)}</span><span>${esc(nome)}</span></dd>`).join("")).join("")}</dl>
+    </article>`).join("") + "</div>";
+})();
+</script>
+</body>
+</html>

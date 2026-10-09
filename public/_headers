@@ -1,0 +1,3 @@
+/docs/*
+  Content-Type: application/pdf
+  Cache-Control: public, max-age=3600

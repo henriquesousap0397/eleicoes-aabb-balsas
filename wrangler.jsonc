@@ -1,0 +1,8 @@
+// Configuração do Cloudflare: publica a pasta public/ como site estático no worker "eleicoes".
+{
+  "name": "eleicoes",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./public"
+  }
+}
