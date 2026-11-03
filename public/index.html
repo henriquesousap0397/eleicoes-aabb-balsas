@@ -330,6 +330,14 @@ footer p { opacity: .85; max-width: 60ch; }
           <div class="when-t">27/10 a<br>10/11/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Inscrição e análise das chapas</h3><p>O candidato a Presidente do Conselho de Administração protocola o requerimento <b>exclusivamente perante a Comissão Eleitoral</b>, na sede da AABB Balsas, e recebe comprovante com data e horário. A Comissão decide em até 2 dias úteis após cada protocolo; pendência sanável tem um prazo único de 2 dias úteis. A composição das chapas só pode mudar até 10/11/2026 (Edital, itens 1 e 2).</p></div>
         </li>
+        <li data-date="2026-10-30">
+          <div class="when-t">30/10/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Inscrição da Chapa 01 protocolada</h3><p>A chapa "O Trabalho Não Pode Parar", encabeçada por Kleiton Silva dos Santos, protocola perante a Comissão Eleitoral o termo de inscrição, assinado individualmente pelos candidatos dos três Conselhos. Recebido pela Presidente da Comissão às 17h07.</p><p class="tl-docs"><a href="docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf" target="_blank" rel="noopener">Termo de inscrição (PDF)</a></p></div>
+        </li>
+        <li data-date="2026-11-03">
+          <div class="when-t">03/11/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Registro da Chapa 01 deferido</h3><p>A Comissão Eleitoral declara que a Chapa 01 está em conformidade com o Estatuto Social, o Regulamento e o Edital, com a composição completa e os requisitos de elegibilidade atendidos, e defere o registro. A publicação abre o prazo de 2 dias úteis para impugnação (Edital, item 6).</p><p class="tl-docs"><a href="docs/Termo-Deferimento-Chapa-01-2026-11-03.pdf" target="_blank" rel="noopener">Termo de deferimento (PDF)</a><a href="docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf" target="_blank" rel="noopener">Termo de inscrição (PDF)</a></p></div>
+        </li>
         <li data-date="" data-phase="campanha">
           <div class="when-t"><span class="pend">A definir</span></div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Relação definitiva das chapas e campanha</h3><p>Encerrados os prazos de recurso e impugnação (2 dias úteis), a Comissão divulga a relação definitiva das chapas habilitadas. A campanha vai dessa divulgação até o encerramento da votação, com tratamento igual às chapas nos meios do clube (Edital, itens 7 e 8).</p></div>
@@ -514,7 +522,7 @@ footer p { opacity: .85; max-width: 60ch; }
       <div class="sec-head">
         <span class="eyebrow">Chapas e candidatos</span>
         <h2>Chapas inscritas</h2>
-        <p>As chapas aparecerão pela ordem de registro, com o mesmo espaço e o mesmo formato para todas, conforme as decisões da Comissão Eleitoral.</p>
+        <p>As chapas aparecem pela ordem cronológica de protocolo, com o mesmo espaço e o mesmo formato para todas, conforme as decisões da Comissão Eleitoral. As inscrições seguem abertas até 10/11/2026, e a relação definitiva das chapas habilitadas será divulgada pela Comissão depois dos prazos de recurso e impugnação.</p>
       </div>
       <div id="chapas-out"></div>
     </div>
@@ -528,6 +536,8 @@ footer p { opacity: .85; max-width: 60ch; }
         <p>Em caso de dúvida, vale o Estatuto Social, que está acima do Regulamento.</p>
       </div>
       <div class="docs">
+        <a class="doc" href="docs/Termo-Deferimento-Chapa-01-2026-11-03.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de deferimento · Chapa 01 "O Trabalho Não Pode Parar"</b><small>Comissão Eleitoral · 03/11/2026</small></span></a>
+        <a class="doc" href="docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de inscrição · Chapa 01 "O Trabalho Não Pode Parar"</b><small>Protocolado perante a Comissão Eleitoral em 30/10/2026, 17h07</small></span></a>
         <a class="doc" href="docs/Edital-Convocacao-Eleicoes-2026-10-23.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Edital de Convocação das Eleições 2026</b><small>Comissão Eleitoral · 23/10/2026 · em vigor</small></span></a>
         <a class="doc" href="docs/Ata-Instalacao-Comissao-Eleitoral-2026-10-23.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Ata de instalação e primeira reunião da Comissão Eleitoral</b><small>Comissão Eleitoral · 23/10/2026</small></span></a>
         <a class="doc" href="docs/Regulamento-de-Eleicoes-2026-Consolidado-2026-10-21.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Regulamento de Eleições 2026</b><small>Conselho Deliberativo · aprovado em 21/10/2026 · em vigor</small></span></a>
@@ -670,12 +680,43 @@ footer p { opacity: .85; max-width: 60ch; }
                { titulo: "Conselho Deliberativo", membros: [...] },
                { titulo: "Conselho Fiscal", membros: [...] } ] }                     */
 const FORMATO = "Presencial, com cédula de papel";
-const CHAPAS = [];
+const CHAPAS = [
+  { numero: "01", nome: "O Trabalho Não Pode Parar",
+    docs: [["docs/Termo-Deferimento-Chapa-01-2026-11-03.pdf", "Termo de deferimento"], ["docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf", "Termo de inscrição"]],
+    situacao: "Registro deferido em 03/11/2026",
+    grupos: [
+      { titulo: "Conselho de Administração", membros: [
+        ["Presidente", "Kleiton Silva dos Santos"],
+        ["Vice-Presidente de Administração", "Marcos Xavier da Silva"],
+        ["Vice-Presidente Financeiro", "Francisco Dalso Almeida"],
+        ["Vice-Presidente de Tecnologia e Inovação", "Henrique de Sousa Paulo"],
+        ["Vice-Presidente Social", "Zilma de Sousa Rocha Ramalho"],
+        ["Vice-Presidente de Esportes", "Mauro Edson do Nascimento"],
+        ["Vice-Presidente Patrimonial", "Kleber Dutra Gomes"],
+        ["Vice-Presidente Institucional", "Amilton Ribeiro de Moura"] ] },
+      { titulo: "Suplentes de Vice-Presidente", membros: [
+        ["1º", "Doralice da Silva Pereira"], ["2º", "Jean Gleiton Moraes de Abreu"],
+        ["3º", "Edilza Maria Evaristo da Silva"], ["4º", "Florisvaldo Ribeiro Costa"] ] },
+      { titulo: "Conselho Deliberativo · titulares", membros: [
+        ["1", "Lucilene Pereira"], ["2", "Jonatan Ribeiro Botelho"], ["3", "Manoel da Silva Oliveira Filho"],
+        ["4", "Edilene Pereira Veras"], ["5", "Vamario Alves"], ["6", "Alesio Sousa Botelho"],
+        ["7", "Adalberto Martins Moura"], ["8", "Delson Lopes da Cunha"], ["9", "João Antônio Morais"],
+        ["10", "Regina Lúcia de Almeida Silva"], ["11", "Francisca da Silva Abreu"], ["12", "Antonio Rodrigues de Assis"],
+        ["13", "Manoel Rito Sousa"], ["14", "Carlos Magno Martins de Miranda"], ["15", "Marília Gabriela Martins Nunes"] ] },
+      { titulo: "Conselho Deliberativo · suplentes", membros: [
+        ["1", "Clayton Rodrigues Martins"], ["2", "Leydervan de Jesus Amorim Mousinho"], ["3", "Flávio Damasceno Santos Nogueira"],
+        ["4", "Alanderson Sousa Andrade"], ["5", "Leonel Silva Sousa"] ] },
+      { titulo: "Conselho Fiscal · efetivos", membros: [
+        ["1", "Maurílio Gonçalves Moura"], ["2", "Murilo Silva dos Santos Souza"] ] },
+      { titulo: "Conselho Fiscal · suplentes", membros: [
+        ["1", "Aparecida Mara de Oliveira"], ["2", "Johnny Herberthy Martins Ferreira"] ] }
+    ] }
+];
 const FOTOS = {};
 const PEDIDOS_PENDENTES = [];
 /* Etapa atual da linha do tempo (data-phase); vazio para calcular automaticamente. */
 const ETAPA_ATUAL = "";
-const ATUALIZADO = "28/10/2026";
+const ATUALIZADO = "03/11/2026";
 
 document.getElementById("upd").textContent = ATUALIZADO;
 
