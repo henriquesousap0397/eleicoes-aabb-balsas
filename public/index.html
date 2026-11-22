@@ -350,6 +350,10 @@ footer p { opacity: .85; max-width: 60ch; }
           <div class="when-t">14/11 a<br>29/11/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Homologação definitiva das chapas e campanha</h3><p>Encerrados os prazos de recurso e impugnação sem nenhuma impugnação contra as chapas deferidas, a Comissão Eleitoral homologa definitivamente a Chapa 01 "O Trabalho Não Pode Parar" e a Chapa 02 "AABB Para Todos" e divulga a relação definitiva das chapas habilitadas. Com a publicação, começa a campanha eleitoral, que vai até o encerramento da votação, com tratamento igual às chapas nos meios institucionais do clube (Termo de 14/11/2026, Arts. 1º a 3º).</p><p class="tl-docs"><a href="docs/Termo-Homologacao-Definitiva-Chapas-2026-11-14.pdf" target="_blank" rel="noopener">Termo de homologação definitiva (PDF)</a></p></div>
         </li>
+        <li data-date="2026-11-21">
+          <div class="when-t">21/11/2026</div><div class="rail"><span class="dot"></span></div>
+          <div class="body"><h3>Chapa 01 indica fiscais</h3><p>Por seu representante, a Chapa 01 "O Trabalho Não Pode Parar" indica à Comissão Eleitoral, para credenciamento, dois fiscais: Katiane Ferreira Coutinho do Nascimento e Carmegildo Xavier da Silva. Os fiscais credenciados podem acompanhar a votação, a lacração e a guarda das urnas e a apuração, sem interferir no atendimento aos eleitores (Edital, itens 3 e 11).</p><p class="tl-docs"><a href="docs/Termo-Indicacao-Fiscais-Chapa-01-2026-11-21.pdf" target="_blank" rel="noopener">Termo de indicação de fiscais (PDF)</a></p></div>
+        </li>
         <li data-date="2026-11-23" data-end="2026-11-29" data-phase="votacao">
           <div class="when-t">23 a 29/11/2026</div><div class="rail"><span class="dot"></span></div>
           <div class="body"><h3>Votação presencial</h3><p>Na sede da AABB Balsas, com cédula de papel e urna física. Segunda a sexta, das 18h30 às 21h30; sábado e domingo, das 10h às 17h. Os sete dias formam um único turno, sem abertura de urnas nem resultado parcial (Edital, item 9).</p></div>
@@ -544,6 +548,7 @@ footer p { opacity: .85; max-width: 60ch; }
         <p>Em caso de dúvida, vale o Estatuto Social, que está acima do Regulamento.</p>
       </div>
       <div class="docs">
+        <a class="doc" href="docs/Termo-Indicacao-Fiscais-Chapa-01-2026-11-21.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de indicação de fiscais · Chapa 01 "O Trabalho Não Pode Parar"</b><small>Representante da Chapa 01 à Comissão Eleitoral · 21/11/2026</small></span></a>
         <a class="doc" href="docs/Termo-Homologacao-Definitiva-Chapas-2026-11-14.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de homologação definitiva das chapas habilitadas</b><small>Comissão Eleitoral · 14/11/2026 · início da campanha</small></span></a>
         <a class="doc" href="docs/Termo-Deferimento-Chapa-02-2026-11-10.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de deferimento · Chapa 02 "AABB Para Todos"</b><small>Comissão Eleitoral · 10/11/2026 (assinado em 11/11/2026)</small></span></a>
         <a class="doc" href="docs/Termo-Inscricao-Chapa-02-2026-11-10.pdf" target="_blank" rel="noopener"><span class="ic">PDF</span><span><b>Termo de inscrição · Chapa 02 "AABB Para Todos"</b><small>Protocolado perante a Comissão Eleitoral em 10/11/2026, 18h40</small></span></a>
@@ -693,7 +698,7 @@ footer p { opacity: .85; max-width: 60ch; }
 const FORMATO = "Presencial, com cédula de papel";
 const CHAPAS = [
   { numero: "01", nome: "O Trabalho Não Pode Parar",
-    docs: [["docs/Termo-Homologacao-Definitiva-Chapas-2026-11-14.pdf", "Homologação definitiva"], ["docs/Termo-Deferimento-Chapa-01-2026-11-03.pdf", "Termo de deferimento"], ["docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf", "Termo de inscrição"]],
+    docs: [["docs/Termo-Homologacao-Definitiva-Chapas-2026-11-14.pdf", "Homologação definitiva"], ["docs/Termo-Deferimento-Chapa-01-2026-11-03.pdf", "Termo de deferimento"], ["docs/Termo-Indicacao-Fiscais-Chapa-01-2026-11-21.pdf", "Indicação de fiscais"], ["docs/Termo-Inscricao-Chapa-01-2026-10-30.pdf", "Termo de inscrição"]],
     situacao: "Habilitada · homologação definitiva em 14/11/2026",
     grupos: [
       { titulo: "Conselho de Administração", membros: [
@@ -754,7 +759,7 @@ const FOTOS = {};
 const PEDIDOS_PENDENTES = [];
 /* Etapa atual da linha do tempo (data-phase); vazio para calcular automaticamente. */
 const ETAPA_ATUAL = "";
-const ATUALIZADO = "15/11/2026";
+const ATUALIZADO = "22/11/2026";
 
 document.getElementById("upd").textContent = ATUALIZADO;
 
